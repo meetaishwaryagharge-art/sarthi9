@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us – Suketu Sarthi Insurance & Investments</title>
+<meta name="description" content="Book a free financial review with Suketu Sarthi. Call, WhatsApp, email or fill out our form. Based in Thane (West), Mumbai, Maharashtra.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #2D1F6E;
+    --navy-light: #3D2E8A;
+    --gold: #1BA8A0;
+    --gold-light: #2DCFC7;
+    --gold-pale: #E0F7F6;
+    --white: #ffffff;
+    --off-white: #F8F7FC;
+    --text: #2D1F6E;
+    --text-muted: #7B6EC4;
+    --border: #D8D0F0;
+    --green: #C94A4A;
+    --error: #C94A4A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--off-white); color: var(--text); line-height: 1.6; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(45,31,110,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(27,168,160,0.2); padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo-icon { width: 42px; height: 42px; background:  #3aaa7a; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 16px; font-weight: 600; color: var(--navy); }
+  .nav-logo-text { display: flex; flex-direction: column; }
+  .nav-logo-text .brand { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 600; color: var(--white); letter-spacing: 1.5px; line-height: 1.2; }
+  .nav-logo-text .tagline { font-size: 9px; color:  #3aaa7a; letter-spacing: 1px; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 8px; list-style: none; align-items: center; }
+  .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 13px; font-weight: 500; padding: 8px 14px; border-radius: 4px; transition: all 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color:white; background: rgba(27,168,160,0.1); }
+  .nav-cta { background:  #3aaa7a !important; color: var(--navy) !important; font-weight: 600 !important; padding: 9px 20px !important; border-radius: 4px !important; }
+
+  .page-hero { background: var(--navy); padding: 140px 5% 80px; position: relative; overflow: hidden; }
+  .page-hero::before { content: ''; position: absolute; top: 0; right: 0; width: 60%; height: 100%; background: linear-gradient(135deg, transparent, rgba(27,168,160,0.05)); }
+  .page-hero-inner { position: relative; z-index: 2; max-width: 700px; }
+  .page-label { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #3aaa7a; margin-bottom: 14px; display: block; }
+  .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 56px); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 18px; }
+  .page-hero h1 em { font-style: italic; color:  #3aaa7a; }
+  .page-hero p { font-size: 17px; color: rgba(255,255,255,0.6); max-width: 560px; line-height: 1.75; }
+
+  /* QUICK CONTACT STRIP */
+  .quick-contact {
+    background: var(--navy-light);
+    border-bottom: 1px solid rgba(27,168,160,0.15);
+    padding: 20px 5%;
+    display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;
+  }
+  .quick-btn {
+    display: flex; align-items: center; gap: 10px;
+    padding: 12px 24px; border-radius: 8px;
+    font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .quick-btn.whatsapp { background: #25D366; color: white; }
+  .quick-btn.whatsapp:hover { background: #1ebe5d; transform: translateY(-2px); }
+  .quick-btn.call { background: rgba(27,168,160,0.15); color: var(--gold); border: 1px solid rgba(27,168,160,0.3); }
+  .quick-btn.call:hover { background: rgba(27,168,160,0.25); transform: translateY(-2px); }
+  .quick-btn.email { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.1); }
+  .quick-btn.email:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+
+  /* MAIN CONTACT SECTION */
+  .contact-section { padding: 80px 5%; }
+  .contact-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: start; }
+
+  /* FORM */
+  .form-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 44px 40px;
+  }
+
+  .form-header { margin-bottom: 32px; }
+  .form-header .label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color:  #3aaa7a; margin-bottom: 8px; }
+  .form-header h2 { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .form-header p { font-size: 14px; color: #3D2E8A; line-height: 1.65; }
+
+  /* INTENT SELECTOR */
+  .intent-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 28px; }
+  .intent-btn {
+    background: var(--off-white); border: 2px solid var(--border);
+    border-radius: 8px; padding: 10px 8px; text-align: center;
+    font-size: 11.5px; font-weight: 600; color: #3D2E8A;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .intent-btn:hover, .intent-btn.selected {
+    border-color:  #3aaa7a;
+    background: var(--gold-pale);
+    color: var(--navy);
+  }
+  .intent-btn .intent-icon { font-size: 18px; display: block; margin-bottom: 4px; }
+
+  .form-group { margin-bottom: 20px; }
+  .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+  .form-group label span { color:  #3aaa7a; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 12px 14px;
+    border: 1.5px solid var(--border); border-radius: 8px;
+    font-family: 'DM Sans', sans-serif; font-size: 14px; color:#3D2E8A;
+    background: var(--white); transition: border-color 0.2s;
+    outline: none; resize: vertical;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: #3aaa7a;
+    box-shadow: 0 0 0 3px rgba(27,168,160,0.1);
+  }
+  .form-group textarea { min-height: 100px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .privacy-note { font-size: 12px; color:#3D2E8A; margin-bottom: 20px; display: flex; align-items: flex-start; gap: 8px; }
+  .privacy-note::before { content: '🔒'; flex-shrink: 0; }
+
+  .submit-btn {
+    width: 100%; background:  #3aaa7a; color: var(--navy);
+    font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700;
+    padding: 16px; border-radius: 8px; border: none; cursor: pointer;
+    transition: all 0.25s; display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .submit-btn:hover { background:  #3aaa7a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(27,168,160,0.4); }
+
+  .response-promise { margin-top: 16px; text-align: center; font-size: 12.5px; color: #3D2E8A; }
+  .response-promise strong { color: var(--navy); }
+
+  /* SUCCESS STATE */
+  .success-state { display: none; text-align: center; padding: 48px 24px; }
+  .success-state .success-icon { font-size: 56px; display: block; margin-bottom: 16px; }
+  .success-state h3 { font-family: 'Playfair Display', serif; font-size: 24px; color: var(--navy); margin-bottom: 10px; }
+  .success-state p { font-size: 15px; color: #3D2E8A; line-height: 1.7; }
+
+  /* INFO PANEL */
+  .info-panel { display: flex; flex-direction: column; gap: 20px; }
+
+  .info-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px;
+  }
+  .info-card h4 { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--navy); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .info-card h4 span { font-size: 18px; }
+
+  .contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+  .contact-item:last-child { margin-bottom: 0; }
+  .contact-item .contact-icon { width: 36px; height: 36px; background: var(--gold-pale); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+  .contact-item .contact-detail { flex: 1; }
+  .contact-item .contact-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-muted); margin-bottom: 2px; }
+  .contact-item a, .contact-item .val { font-size: 14px; font-weight: 500; color: var(--navy); text-decoration: none; display: block; }
+  .contact-item a:hover { color:  #3aaa7a; }
+
+  .hours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .hour-row { font-size: 13px; color: #3D2E8A; padding: 6px 0; border-bottom: 1px solid var(--border); }
+  .hour-row:nth-child(odd) { grid-column: 1; }
+  .hour-row:nth-child(even) { grid-column: 2; }
+  .hour-row strong { display: block; font-size: 12px; color: var(--navy); font-weight: 600; }
+
+  /* MAP EMBED */
+  .map-container { border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+  .map-container iframe { width: 100%; height: 240px; border: none; display: block; }
+
+  /* SOCIAL */
+  .social-row { display: flex; gap: 10px; margin-top: 12px; }
+  .social-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; padding: 10px; background: var(--off-white); border: 1px solid var(--border); border-radius: 8px; font-size: 12.5px; font-weight: 600; color: var(--text-muted); text-decoration: none; transition: all 0.2s; }
+  .social-btn:hover { border-color:  #3aaa7a; color: var(--navy); background:  #3aaa7a; }
+
+  /* FAQ */
+  .faq-section { background: var(--white); padding: 80px 5%; }
+  .faq-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 40px; }
+  .faq-item { padding: 24px; border: 1px solid var(--border); border-radius: 10px; }
+  .faq-item h4 { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 10px; }
+  .faq-item p { font-size: 13.5px; color: var(--text-muted); line-height: 1.65; }
+
+  .section-label { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color:  #3aaa7a; margin-bottom: 10px; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 3.5vw, 40px); font-weight: 700; color: var(--navy); line-height: 1.25; margin-bottom: 16px; }
+  .section-subtitle { font-size: 16px; color:#3D2E8A; max-width: 560px; line-height: 1.7; }
+
+  footer { background: #1A1040; color: rgba(255,255,255,0.6); padding: 60px 5% 30px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+  .footer-brand p { font-size: 13.5px; line-height: 1.75; margin-top: 16px; color: rgba(255,255,255,0.45); }
+  .footer-col h5 { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3aaa7a; margin-bottom: 16px; }
+  .footer-col a { display: block; font-size: 13.5px; color: rgba(255,255,255,0.5); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
+  .footer-col a:hover { color: #3aaa7a; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: rgba(255,255,255,0.3); flex-wrap: wrap; gap: 10px; }
+  .whatsapp-float { position: fixed; bottom: 28px; right: 28px; width: 54px; height: 54px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; box-shadow: 0 4px 20px rgba(37,211,102,0.4); z-index: 999; text-decoration: none; transition: all 0.3s; }
+  .whatsapp-float:hover { transform: scale(1.1); }
+
+  @media (max-width: 900px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .contact-section { padding: 60px 4%; }
+    .form-card { padding: 28px 20px; }
+    .form-row { grid-template-columns: 1fr; }
+    .intent-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+  .logo{
+          height: 50px;
+
+    }
+      /* Mobile hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+    background: none;
+    border: none;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    top: 68px; left: 0; right: 0;
+    background: rgba(30,18,80, 0.98);
+    backdrop-filter: blur(16px);
+    padding: 20px;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 999;
+    border-bottom: 1px solid rgba(27,168,160,0.2);
+  }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: all 0.2s;
+  }
+  .mobile-nav a:hover { background: rgba(27,168,160,0.1); color: var(--gold); }
+  .mobile-nav .mob-cta {
+    background:  #3aaa7a;
+    color: var(--navy) !important;
+    font-weight: 700;
+    text-align: center;
+    border-color:  #3aaa7a;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon"><img src="Logo.jpg" class="logo"></div>
+    <div class="nav-logo-text">
+      <span class="brand">SUKETU SARTHI®</span>
+      <span class="tagline">Insurance & Investments</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+     <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+</nav>
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">🏠 Home</a>
+  <a href="about.html">ℹ️ About</a>
+  <a href="services.html">🛡️ Services</a>
+  <a href="contact.html" >📋 Book a Free Review</a>
+</div>
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-label">Get in Touch</span>
+    <h1>Let's Start a<br><em>Conversation</em></h1>
+    <p>We typically respond within a few hours. Whether you have a quick question or want a complete financial review — reach us the way that suits you best.</p>
+  </div>
+</div>
+
+<!-- QUICK CONTACT -->
+<div class="quick-contact">
+ <!-- <a href="https://wa.me/919XXXXXXXXX" class="quick-btn whatsapp">💬 WhatsApp Us Now</a>
+  <a href="tel:+919XXXXXXXXX" class="quick-btn call">📞 Call Directly</a>-->
+  <a href="mailto:dhruva@suketusarthi.com" class="quick-btn email">✉️ Send an Email</a>
+</div>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+  <div class="contact-grid">
+
+    <!-- FORM -->
+    <div class="form-card" id="contact-form-card">
+      <div class="form-header">
+        <div class="label">Free Consultation</div>
+        <h2>Book a Financial Review</h2>
+        <p>Tell us what you're looking for and we'll set up a 30-minute no-obligation meeting — call, video, or in-person at our Thane office.</p>
+      </div>
+
+      <div style="font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px;">I'm interested in:</div>
+      <div class="intent-grid" id="intent-grid">
+        <div class="intent-btn" onclick="selectIntent(this)"><span class="intent-icon">🛡️</span>Life Insurance</div>
+        <div class="intent-btn" onclick="selectIntent(this)"><span class="intent-icon">❤️</span>Health Insurance</div>
+        <div class="intent-btn" onclick="selectIntent(this)"><span class="intent-icon">📈</span>Mutual Funds</div>
+        <div class="intent-btn" onclick="selectIntent(this)"><span class="intent-icon">🌅</span>Retirement</div>
+        <div class="intent-btn" onclick="selectIntent(this)"><span class="intent-icon">🚗</span>Vehicle Insurance</div>
+        <div class="intent-btn" onclick="selectIntent(this)"><span class="intent-icon">💬</span>General Advice</div>
+      </div>
+
+      <div id="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name <span>*</span></label>
+            <input type="text" id="name" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number <span>*</span></label>
+            <input type="tel" id="phone" placeholder="+91 9X XXXX XXXX" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="email" placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label>Preferred Time to Call</label>
+          <select id="time">
+            <option value="">Select a preferred time</option>
+            <option>Morning (9am – 12pm)</option>
+            <option>Afternoon (12pm – 4pm)</option>
+            <option>Evening (4pm – 7pm)</option>
+            <option>Anytime works for me</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Your Message (Optional)</label>
+          <textarea id="message" placeholder="Tell us a little about your situation — existing cover, major goals, or any questions you have..."></textarea>
+        </div>
+
+        <div class="privacy-note">Your information is completely confidential and will never be shared with any third party without your explicit consent.</div>
+
+        <button class="submit-btn" onclick="submitForm()">
+          📋 Submit My Request
+        </button>
+        <div class="response-promise">We respond within <strong>4 business hours</strong> · No sales pressure, ever</div>
+      </div>
+
+      <div class="success-state" id="success-state">
+        <span class="success-icon">✅</span>
+        <h3>Request Received!</h3>
+        <p>We've received your message and will contact you within 4 business hours.<br><br>In the meantime, feel free to WhatsApp us at any time — we're usually available same day.</p>
+      </div>
+    </div>
+
+    <!-- INFO PANEL -->
+    <div class="info-panel">
+      <div class="info-card">
+        <h4><span>📍</span>Our Office</h4>
+        <div class="contact-item">
+          <div class="contact-icon">🏢</div>
+          <div class="contact-detail">
+            <div class="contact-label">Address</div>
+            <span class="val">Suketu Sarthi Insurance & Investments</span>
+            <span class="val" style="color: var(--text-muted); font-size: 13px; font-weight: 400;">Thane (West) – 400601, Maharashtra</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-detail">
+            <div class="contact-label">Phone</div>
+            <a href="tel:+919XXXXXXXXX">+91 9X XXXX XXXX</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-detail">
+            <div class="contact-label">Email</div>
+            <a href="mailto:dhruva@suketusarthi.com">dhruva@suketusarthi.com</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">💬</div>
+          <div class="contact-detail">
+            <div class="contact-label">WhatsApp</div>
+            <a href="https://wa.me/919XXXXXXXXX">Message us on WhatsApp</a>
+          </div>
+        </div>
+        <div class="social-row">
+          <a href="#" class="social-btn">f Facebook</a>
+          <a href="#" class="social-btn">in LinkedIn</a>
+          <a href="#" class="social-btn">📸 Instagram</a>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <h4><span>🕐</span>Office Hours</h4>
+        <div class="hours-grid">
+          <div class="hour-row"><strong>Monday – Friday</strong>9:30 AM – 7:00 PM</div>
+          <div class="hour-row"><strong>Saturday</strong>10:00 AM – 5:00 PM</div>
+          <div class="hour-row"><strong>Sunday</strong>By Appointment</div>
+          <div class="hour-row"><strong>WhatsApp</strong>Usually same-day</div>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <h4><span>🗺️</span>Find Us</h4>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30131.58!2d72.9781!3d19.2183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b8e75f8a0001%3A0x0!2sThane+West%2C+Maharashtra!5e0!3m2!1sen!2sin!4v1"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Suketu Sarthi Office - Thane West"
+            aria-label="Map showing our Thane West office location">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="info-card" style="background: var(--navy); border-color: rgba(27,168,160,0.2);">
+        <h4 style="color: var(--gold);">⚡ Emergency Claim Support?</h4>
+        <p style="font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.65; margin-bottom: 16px;">If you need immediate assistance with a claim or have an urgent insurance query, WhatsApp us directly — we prioritise urgent matters.</p>
+        <a href="https://wa.me/919XXXXXXXXX?text=I%20need%20urgent%20claim%20support" style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #25D366; color: white; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.2s;">💬 WhatsApp for Urgent Help</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="section-label">Common Questions</div>
+  <h2 class="section-title">Before You Reach Out</h2>
+  <p class="section-subtitle">Quick answers to the questions we hear most often.</p>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <h4>Is the consultation really free?</h4>
+      <p>Yes, completely. We offer a free 30-minute financial review with no obligation to buy anything. We believe you should understand your options before making any decision.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Can we meet in person?</h4>
+      <p>Absolutely. Our office is in Thane (West). We also offer phone and video consultations for clients across Mumbai and Maharashtra who prefer not to travel.</p>
+    </div>
+    <div class="faq-item">
+      <h4>I already have insurance. Can you review it?</h4>
+      <p>Yes — in fact, many clients come to us for a second opinion. We'll review your existing policies and tell you honestly whether they serve your needs or not.</p>
+    </div>
+    <div class="faq-item">
+      <h4>How quickly will you respond?</h4>
+      <p>We respond to all enquiries within 4 business hours. WhatsApp messages are usually answered the same day, including on Saturdays.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Will my information be shared?</h4>
+      <p>Never. Everything you share with us is completely confidential and used solely to advise you. We do not sell or share client data with any third party.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Can you help with existing claims?</h4>
+      <p>Yes. Claim support is one of our core services. Even if you didn't buy your policy through us, we can often help guide you through the claim process.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="font-family: 'Cinzel', serif; font-size: 16px; color: var(--gold); letter-spacing: 1.5px;">SUKETU SARTHI®</div>
+      <div style="font-size: 10px; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; margin-top: 2px;">Insurance & Investments</div>
+      <p>Guna Arth Bima Nivesh — holistic financial protection and wealth planning for families and businesses across Thane and Mumbai since 1994.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <a href="services.html#life">Life Insurance</a>
+      <a href="services.html#health">Health Insurance</a>
+      <a href="services.html#mutual-funds">Mutual Funds</a>
+      <a href="services.html#retirement">Retirement Plans</a>
+      <a href="services.html#vehicle">Vehicle Insurance</a>
+      <a href="services.html#property">Property Insurance</a>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <a href="about.html">About Us</a>
+      <a href="about.html#story">Our Story</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <a href="mailto:dhruva@suketusarthi.com">dhruva@suketusarthi.com</a>
+      
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Suketu Sarthi Insurance & Investments. All rights reserved.</span>
+    <span>IRDAI Reg. · AMFI Reg. ARN: XXXXXX</span>
+  </div>
+</footer>
+
+<!--<a href="https://wa.me/919XXXXXXXXX" class="whatsapp-float" target="_blank">💬</a>-->
+
+<script>
+function selectIntent(el) {
+  document.querySelectorAll('.intent-btn').forEach(b => b.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function submitForm() {
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  if (!name || !phone) {
+    alert('Please enter your name and phone number so we can reach you.');
+    return;
+  }
+  document.getElementById('contact-form').style.display = 'none';
+  document.querySelector('.form-header').style.display = 'none';
+  document.querySelector('.intent-grid').style.display = 'none';
+  document.querySelector('[style*="I\'m interested"]') && (document.querySelector('[style*="I\'m interested"]').style.display = 'none');
+  document.getElementById('success-state').style.display = 'block';
+  document.querySelectorAll('.intent-grid ~ *').forEach(el => {
+    if (el.id === 'contact-form') el.style.display = 'none';
+  });
+}
+</script>
+
+</body>
+</html>

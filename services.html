@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Services – Suketu Sarthi Insurance & Investments</title>
+<meta name="description" content="Life insurance, health insurance, mutual funds, retirement planning, vehicle and property insurance. Expert advisory in Thane, Mumbai since 1994.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #2D1F6E;
+    --navy-light: #3D2E8A;
+    --gold: #1BA8A0;
+    --gold-light: #2DCFC7;
+    --gold-pale: #E0F7F6;
+    --white: #ffffff;
+    --off-white: #F8F7FC;
+    --text: #2D1F6E;
+    --text-muted: #7B6EC4;
+    --border: #D8D0F0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--off-white); color: var(--text); line-height: 1.6; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(45,31,110,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(27,168,160,0.2); padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo-icon { width: 42px; height: 42px; background:  #3aaa7a; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 16px; font-weight: 600; color: var(--navy); }
+  .nav-logo-text { display: flex; flex-direction: column; }
+  .nav-logo-text .brand { font-family: 'Cinzel', serif; font-size: 14px; font-weight: 600; color: var(--white); letter-spacing: 1.5px; line-height: 1.2; }
+  .nav-logo-text .tagline { font-size: 9px; color:  #3aaa7a; letter-spacing: 1px; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 8px; list-style: none; align-items: center; }
+  .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 13px; font-weight: 500; padding: 8px 14px; border-radius: 4px; transition: all 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color:white; background: rgba(27,168,160,0.1); }
+  .nav-cta { background: #3aaa7a !important; color: var(--navy) !important; font-weight: 600 !important; padding: 9px 20px !important; border-radius: 4px !important; }
+
+  .page-hero { background: var(--navy); padding: 140px 5% 80px; position: relative; overflow: hidden; }
+  .page-hero::before { content: ''; position: absolute; top: 0; right: 0; width: 60%; height: 100%; background: linear-gradient(135deg, transparent, rgba(27,168,160,0.05)); }
+  .page-hero-inner { position: relative; z-index: 2; max-width: 700px; }
+  .page-label { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color:  #3aaa7a; margin-bottom: 14px; display: block; }
+  .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 56px); font-weight: 700; color: var(--white); line-height: 1.2; margin-bottom: 18px; }
+  .page-hero h1 em { font-style: italic; color: #3aaa7a; }
+  .page-hero p { font-size: 17px; color: rgba(255,255,255,0.6); max-width: 560px; line-height: 1.75; }
+
+  /* SERVICE NAV */
+  .service-nav { background: var(--white); border-bottom: 1px solid var(--border); padding: 0 5%; position: sticky; top: 70px; z-index: 50; overflow-x: auto; }
+  .service-nav-inner { display: flex; gap: 0; min-width: max-content; }
+  .service-nav a { display: flex; align-items: center; gap: 8px; padding: 16px 18px; font-size: 13px; font-weight: 500; color: var(--text-muted); text-decoration: none; border-bottom: 3px solid transparent; transition: all 0.2s; white-space: nowrap; }
+  .service-nav a:hover, .service-nav a.active { color: var(--navy); border-bottom-color:  #3aaa7a; }
+
+  /* SERVICE SECTION */
+  .service-section { padding: 80px 5%; }
+  .service-section:nth-child(even) { background: var(--white); }
+
+  .service-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: start; }
+  .service-inner.reverse { grid-template-columns: 1.4fr 1fr; }
+  .service-inner.reverse .service-info { order: 2; }
+  .service-inner.reverse .service-details { order: 1; }
+
+  .service-tag { font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color:  #3aaa7a; margin-bottom: 12px; display: block; }
+  .service-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3vw, 38px); font-weight: 700; color: var(--navy); line-height: 1.25; margin-bottom: 16px; }
+  .service-desc { font-size: 15px; color: #3D2E8A; line-height: 1.8; margin-bottom: 24px; }
+
+  .service-features { list-style: none; margin-bottom: 28px; }
+  .service-features li { font-size: 14px; color: #3D2E8A; padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; align-items: flex-start; gap: 10px; }
+  .service-features li:last-child { border-bottom: none; }
+  .service-features li::before { content: '✓'; color: #3aaa7a; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+  .btn-primary { background:  #3aaa7a; color: var(--navy); font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600; padding: 14px 28px; border-radius: 4px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.25s; border: 2px solid var(--gold); }
+  .btn-primary:hover { background: #3aaa7a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(27,168,160,0.35); }
+
+  /* Detail cards */
+  .detail-card { background: var(--navy); border-radius: 16px; padding: 36px; color: var(--white); position: relative; overflow: hidden; }
+  .detail-card::before { content: attr(data-icon); font-size: 120px; position: absolute; top: -20px; right: -20px; opacity: 0.06; pointer-events: none; }
+  .detail-card-icon { font-size: 36px; margin-bottom: 16px; display: block; position: relative; z-index: 2; }
+  .detail-card h3 { font-family: 'Playfair Display', serif; font-size: 20px; color:  #3aaa7a; margin-bottom: 12px; position: relative; z-index: 2; }
+  .detail-card p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 20px; position: relative; z-index: 2; }
+  .detail-card .faq-list { list-style: none; position: relative; z-index: 2; }
+  .detail-card .faq-list li { font-size: 13px; color: rgba(255,255,255,0.55); padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .detail-card .faq-list li strong { color: rgba(255,255,255,0.85); display: block; font-size: 12.5px; font-weight: 600; }
+
+  /* IDEAL FOR */
+  .ideal-for { background: var(--gold-pale); border: 1px solid rgba(27,168,160,0.3); border-radius: 12px; padding: 20px 24px; margin-bottom: 28px; }
+  .ideal-for .label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color:  #3aaa7a; margin-bottom: 8px; }
+  .ideal-for p { font-size: 14px; color: var(--navy); line-height: 1.6; }
+
+  /* CTA BAND */
+  .cta-band { background: linear-gradient(135deg, var(--navy), var(--navy-light)); text-align: center; padding: 80px 5%; position: relative; overflow: hidden; }
+  .cta-band::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23c8963e' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); pointer-events: none; }
+  .cta-band h2 { font-family: 'Playfair Display', serif; font-size: clamp(28px,3.5vw,40px); color: var(--white); margin-bottom: 16px; position: relative; }
+  .cta-band p { color: rgba(255,255,255,0.6); font-size: 16px; margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; position: relative; }
+  .cta-actions { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; position: relative; }
+  .btn-secondary { background: transparent; color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; padding: 14px 28px; border-radius: 4px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.25s; border: 2px solid rgba(255,255,255,0.25); }
+  .btn-secondary:hover { border-color:  #3aaa7a; color: #3aaa7a; }
+
+  footer { background: #1A1040; color: rgba(255,255,255,0.6); padding: 60px 5% 30px; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+  .footer-brand p { font-size: 13.5px; line-height: 1.75; margin-top: 16px; color: rgba(255,255,255,0.45); }
+  .footer-col h5 { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color:  #3aaa7a; margin-bottom: 16px; }
+  .footer-col a { display: block; font-size: 13.5px; color: rgba(255,255,255,0.5); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
+  .footer-col a:hover { color: #3aaa7a; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: rgba(255,255,255,0.3); flex-wrap: wrap; gap: 10px; }
+  .whatsapp-float { position: fixed; bottom: 28px; right: 28px; width: 54px; height: 54px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; box-shadow: 0 4px 20px rgba(37,211,102,0.4); z-index: 999; text-decoration: none; transition: all 0.3s; }
+
+  @media (max-width: 900px) {
+    .service-inner, .service-inner.reverse { grid-template-columns: 1fr; }
+    .service-inner.reverse .service-info, .service-inner.reverse .service-details { order: unset; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .service-section { padding: 60px 4%; }
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+   .logo{
+          height: 50px;
+
+    }
+    /* Mobile hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+    background: none;
+    border: none;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    top: 68px; left: 0; right: 0;
+    background: rgba(30,18,80, 0.98);
+    backdrop-filter: blur(16px);
+    padding: 20px;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 999;
+    border-bottom: 1px solid rgba(27,168,160,0.2);
+  }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: all 0.2s;
+  }
+  .mobile-nav a:hover { background: rgba(27,168,160,0.1); color: var(--gold); }
+  .mobile-nav .mob-cta {
+    background:  #3aaa7a;
+    color: var(--navy) !important;
+    font-weight: 700;
+    text-align: center;
+    border-color: #3aaa7a;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon"><img src="Logo.jpg" class="logo"></div>
+    <div class="nav-logo-text">
+      <span class="brand">SUKETU SARTHI®</span>
+      <span class="tagline">Insurance & Investments</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+     <li><a href="testimonials.html">Testimonials</a></li>
+    <li><a href="contact.html" >Contact</a></li>
+  </ul>
+</nav>
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">🏠 Home</a>
+  <a href="about.html">ℹ️ About</a>
+  <a href="services.html">🛡️ Services</a>
+  <a href="contact.html" class="mob-cta">📋 Book a Free Review</a>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="page-label">Our Services</span>
+    <h1>Every Product, Chosen<br><em>With You in Mind</em></h1>
+    <p>From protecting your family to building lasting wealth — we offer every service you need from a single, trusted advisor you've known for years.</p>
+  </div>
+</div>
+
+<!-- SERVICE NAV -->
+<div class="service-nav">
+  <div class="service-nav-inner">
+    <a href="#life">🛡️ Life Insurance</a>
+    <a href="#health">❤️ Health Insurance</a>
+    <a href="#mutual-funds">📈 Mutual Funds</a>
+    <a href="#retirement">🌅 Retirement</a>
+    <a href="#vehicle">🚗 Vehicle Insurance</a>
+    <a href="#property">🏠 Property Insurance</a>
+  </div>
+</div>
+
+<!-- LIFE INSURANCE -->
+<section class="service-section" id="life">
+  <div class="service-inner">
+    <div class="service-info">
+      <span class="service-tag">Protection Planning</span>
+      <h2 class="service-title">Life Insurance</h2>
+      <p class="service-desc">Your family's financial security shouldn't depend on your presence. The right life insurance plan ensures your loved ones maintain their lifestyle, clear debts, and achieve their goals — even in your absence.</p>
+      <div class="ideal-for">
+        <div class="label">Ideal For</div>
+        <p>Young families, sole breadwinners, homeowners with loans, parents planning for children's education, and business owners with partners or employees.</p>
+      </div>
+      <ul class="service-features">
+        <li>Term plans for maximum pure protection</li>
+        <li>Endowment & money-back plans for savings + cover</li>
+        <li>ULIPs for market-linked insurance + investment</li>
+        <li>Child education plans & annuity-based life cover</li>
+        <li>Guidance on right sum assured calculation</li>
+        <li>Claim support and nomination advisory</li>
+      </ul>
+      <a href="contact.html" class="btn-primary">📋 Get Life Insurance Advice</a>
+    </div>
+    <div class="service-details">
+      <div class="detail-card" data-icon="🛡️">
+        <span class="detail-card-icon">🛡️</span>
+        <h3>What Should You Know?</h3>
+        <p>Many people are under-insured or in the wrong product. Here's what we address in every life insurance consultation:</p>
+        <ul class="faq-list">
+          <li><strong>How much cover do I actually need?</strong>Typically 15–20× your annual income, considering debts and dependents.</li>
+          <li><strong>Term vs Endowment vs ULIP — which is right?</strong>Depends on your age, income, and goals. We explain all options clearly.</li>
+          <li><strong>What happens if I miss a premium?</strong>Grace periods, lapse rules, and revival options vary — we guide you.</li>
+          <li><strong>How do I make a claim?</strong>We assist your family through the entire claim process — documentation and follow-up.</li>
+          <li><strong>Can I add riders?</strong>Critical illness, accidental disability, waiver of premium — we advise the right add-ons.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HEALTH INSURANCE -->
+<section class="service-section" id="health">
+  <div class="service-inner reverse">
+    <div class="service-details">
+      <div class="detail-card" data-icon="❤️">
+        <span class="detail-card-icon">❤️‍🩹</span>
+        <h3>What Should You Know?</h3>
+        <p>Medical costs in India are rising at 14% annually. A good health plan is now essential, not optional:</p>
+        <ul class="faq-list">
+          <li><strong>Family floater vs individual — which is better?</strong>Depends on your family's age, health history, and usage pattern.</li>
+          <li><strong>What's a waiting period?</strong>Pre-existing conditions usually have 2–4 year waits — buy early for full benefit.</li>
+          <li><strong>What's not covered?</strong>Cosmetic surgery, dental, and certain treatments — we explain exclusions clearly.</li>
+          <li><strong>How does cashless hospitalisation work?</strong>We help you choose plans with strong network hospitals near your home.</li>
+          <li><strong>Do I need a top-up plan?</strong>Super top-ups offer high cover at low cost — often the smartest add-on.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="service-info">
+      <span class="service-tag">Medical Coverage</span>
+      <h2 class="service-title">Health Insurance</h2>
+      <p class="service-desc">One hospitalisation without insurance can wipe out years of savings. A well-structured health plan protects your family's finances while ensuring access to quality care without compromise.</p>
+      <div class="ideal-for">
+        <div class="label">Ideal For</div>
+        <p>Families of all sizes, self-employed individuals without employer cover, senior citizens, people with pre-existing conditions, and those seeking critical illness cover.</p>
+      </div>
+      <ul class="service-features">
+        <li>Individual, family floater & senior citizen plans</li>
+        <li>Critical illness & cancer-specific cover</li>
+        <li>Top-up and super top-up plans</li>
+        <li>Maternity and newborn cover</li>
+        <li>Cashless hospitalisation across major hospitals</li>
+        <li>Policy renewal tracking and claims support</li>
+      </ul>
+      <a href="contact.html" class="btn-primary">📋 Find the Right Health Plan</a>
+    </div>
+  </div>
+</section>
+
+<!-- MUTUAL FUNDS -->
+<section class="service-section" id="mutual-funds">
+  <div class="service-inner">
+    <div class="service-info">
+      <span class="service-tag">Wealth Building</span>
+      <h2 class="service-title">Mutual Fund Investments</h2>
+      <p class="service-desc">Building wealth isn't about picking the hottest fund — it's about consistent investing aligned with your goals. We design SIP plans that grow your money steadily, tax-efficiently, and in line with your risk profile.</p>
+      <div class="ideal-for">
+        <div class="label">Ideal For</div>
+        <p>Salaried professionals starting SIPs, HNIs diversifying portfolios, parents planning for children's education, and anyone seeking inflation-beating returns over 5+ year horizons.</p>
+      </div>
+      <ul class="service-features">
+        <li>Goal-based SIP planning (education, home, retirement)</li>
+        <li>Risk profiling and asset allocation advisory</li>
+        <li>Equity, debt, hybrid & international fund selection</li>
+        <li>Tax planning via ELSS funds (Section 80C)</li>
+        <li>Annual portfolio review and rebalancing</li>
+        <li>Lump-sum investment guidance for windfall amounts</li>
+      </ul>
+      <a href="contact.html" class="btn-primary">📊 Start Your SIP Journey</a>
+    </div>
+    <div class="service-details">
+      <div class="detail-card" data-icon="📈">
+        <span class="detail-card-icon">📈</span>
+        <h3>What Should You Know?</h3>
+        <p>Mutual funds are for everyone — not just the wealthy or financially savvy. Key guidance we provide:</p>
+        <ul class="faq-list">
+          <li><strong>How much should I start with?</strong>SIPs can begin at ₹500/month. We size your investment to your income and goal.</li>
+          <li><strong>Which funds are best right now?</strong>We focus on long-term fit over short-term performance rankings.</li>
+          <li><strong>What about market crashes?</strong>SIP investors actually benefit from corrections. We coach you to stay disciplined.</li>
+          <li><strong>When should I sell?</strong>When your goal is met — not when markets fall. We guide this decision.</li>
+          <li><strong>Are my returns taxable?</strong>LTCG and STCG rules apply — we advise on tax-efficient withdrawal timing.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RETIREMENT -->
+<section class="service-section" id="retirement">
+  <div class="service-inner reverse">
+    <div class="service-details">
+      <div class="detail-card" data-icon="🌅">
+        <span class="detail-card-icon">🌅</span>
+        <h3>What Should You Know?</h3>
+        <p>Most people underestimate how much they'll need. Our retirement advisory addresses these gaps:</p>
+        <ul class="faq-list">
+          <li><strong>How big does my corpus need to be?</strong>Usually 25–30× your annual expenses, accounting for inflation over 25+ years.</li>
+          <li><strong>What's the best vehicle — NPS, PPF, or MF?</strong>Depends on your tax bracket, risk appetite, and withdrawal flexibility needed.</li>
+          <li><strong>When should I start?</strong>Yesterday. Every 10-year delay roughly doubles the monthly SIP needed.</li>
+          <li><strong>How do I generate regular income post-retirement?</strong>Systematic withdrawal plans, annuities, and dividend options — we design the mix.</li>
+          <li><strong>What about medical costs in old age?</strong>We integrate health cover planning as part of retirement financial planning.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="service-info">
+      <span class="service-tag">Retirement Planning</span>
+      <h2 class="service-title">Retirement & Pension Planning</h2>
+      <p class="service-desc">A comfortable retirement requires planning decades in advance. We help you build a corpus that sustains your lifestyle long after your income stops — with the right mix of growth, safety, and liquidity.</p>
+      <div class="ideal-for">
+        <div class="label">Ideal For</div>
+        <p>Working professionals aged 25–55, self-employed individuals without PF cover, early retirees planning FIRE, and those reviewing existing retirement portfolios.</p>
+      </div>
+      <ul class="service-features">
+        <li>Retirement corpus goal calculation</li>
+        <li>NPS, PPF, pension plan advisory</li>
+        <li>SIP-based long-term wealth building</li>
+        <li>Systematic Withdrawal Plan structuring</li>
+        <li>Tax-efficient retirement income design</li>
+        <li>Legacy and estate planning guidance</li>
+      </ul>
+      <a href="contact.html" class="btn-primary">🌅 Plan Your Retirement</a>
+    </div>
+  </div>
+</section>
+
+<!-- VEHICLE INSURANCE -->
+<section class="service-section" id="vehicle">
+  <div class="service-inner">
+    <div class="service-info">
+      <span class="service-tag">Vehicle Protection</span>
+      <h2 class="service-title">Vehicle Insurance</h2>
+      <p class="service-desc">Vehicle insurance is mandatory — but not all policies are equal. We help you choose the right comprehensive plan, understand what's covered, and get claims processed quickly when needed.</p>
+      <div class="ideal-for">
+        <div class="label">Ideal For</div>
+        <p>Car and two-wheeler owners, commercial vehicle owners, fleet operators, and anyone looking to renew or upgrade their motor insurance policy.</p>
+      </div>
+      <ul class="service-features">
+        <li>Comprehensive and third-party only plans</li>
+        <li>New car / bike insurance</li>
+        <li>Annual policy renewal reminders</li>
+        <li>Zero-depreciation and engine protection add-ons</li>
+        <li>Quick claim filing assistance</li>
+        <li>Comparison across all major motor insurers</li>
+      </ul>
+      <a href="contact.html" class="btn-primary">🚗 Insure Your Vehicle</a>
+    </div>
+    <div class="service-details">
+      <div class="detail-card" data-icon="🚗">
+        <span class="detail-card-icon">🚗</span>
+        <h3>Key Add-ons We Advise</h3>
+        <p>The right add-ons can dramatically reduce out-of-pocket costs during a claim. We guide you through the best options:</p>
+        <ul class="faq-list">
+          <li><strong>Zero Depreciation Cover</strong>Claim full repair cost without depreciation deduction — worth every rupee for new vehicles.</li>
+          <li><strong>Engine & Gearbox Protection</strong>Covers damage from water ingression and mechanical failure — essential in monsoon-heavy regions.</li>
+          <li><strong>Roadside Assistance</strong>Emergency towing, fuel delivery, and key-lost support — 24/7 nationwide.</li>
+          <li><strong>Return to Invoice</strong>In a total loss, get the original purchase price — not the market value — of your vehicle.</li>
+          <li><strong>NCB Protection</strong>Keep your No Claim Bonus even after one claim per year.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROPERTY INSURANCE -->
+<section class="service-section" id="property">
+  <div class="service-inner reverse">
+    <div class="service-details">
+      <div class="detail-card" data-icon="🏠">
+        <span class="detail-card-icon">🏠</span>
+        <h3>What Does Property Insurance Cover?</h3>
+        <p>Many people assume property insurance is only for commercial buildings. Here's why homeowners need it too:</p>
+        <ul class="faq-list">
+          <li><strong>Fire & related perils</strong>Fire, explosion, lightning, and implosion — the primary covered risks for structure and contents.</li>
+          <li><strong>Natural calamities</strong>Flood, cyclone, earthquake — essential in Maharashtra's coastal and flood-prone zones.</li>
+          <li><strong>Burglary & theft</strong>Contents cover protects electronics, jewellery, and valuables stored at home.</li>
+          <li><strong>Structural damage</strong>Protects the physical structure of your home from listed perils.</li>
+          <li><strong>Business premises cover</strong>Stock, machinery, and premises for shops and small businesses.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="service-info">
+      <span class="service-tag">Property Protection</span>
+      <h2 class="service-title">Property Insurance</h2>
+      <p class="service-desc">Your home is likely your largest asset. Property insurance protects it against fire, natural disasters, theft, and structural damage — giving you the confidence that rebuilding won't bankrupt you.</p>
+      <div class="ideal-for">
+        <div class="label">Ideal For</div>
+        <p>Homeowners, tenants with valuable contents, landlords, retail shop owners, small business owners, and anyone in flood-prone or earthquake-risk zones.</p>
+      </div>
+      <ul class="service-features">
+        <li>Home structure and contents cover</li>
+        <li>Fire and allied perils insurance</li>
+        <li>Flood, cyclone, earthquake coverage</li>
+        <li>Burglary and theft protection</li>
+        <li>Commercial property and shop cover</li>
+        <li>Sum insured adequacy review and reinstatement advisory</li>
+      </ul>
+      <a href="contact.html" class="btn-primary">🏠 Protect Your Property</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <h2>Not Sure Which Service You Need?</h2>
+  <p>Book a free 30-minute consultation. We'll listen to your situation and recommend only what genuinely benefits you.</p>
+  <div class="cta-actions">
+    <a href="contact.html" class="btn-primary">📋 Book Free Consultation</a>
+   <!-- <a href="https://wa.me/919XXXXXXXXX" class="btn-secondary">💬 Chat on WhatsApp</a>-->
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="font-family: 'Cinzel', serif; font-size: 16px; color: var(--gold); letter-spacing: 1.5px;">SUKETU SARTHI®</div>
+      <div style="font-size: 10px; color: var(--text-muted); letter-spacing: 1px; text-transform: uppercase; margin-top: 2px;">Insurance & Investments</div>
+      <p>Guna Arth Bima Nivesh — holistic financial protection and wealth planning for families and businesses across Thane and Mumbai since 1994.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <a href="#life">Life Insurance</a>
+      <a href="#health">Health Insurance</a>
+      <a href="#mutual-funds">Mutual Funds</a>
+      <a href="#retirement">Retirement Plans</a>
+      <a href="#vehicle">Vehicle Insurance</a>
+      <a href="#property">Property Insurance</a>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <a href="about.html">About Us</a>
+      <a href="about.html#story">Our Story</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <a href="mailto:dhruva@suketusarthi.com">dhruva@suketusarthi.com</a>
+     
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Suketu Sarthi Insurance & Investments. All rights reserved.</span>
+    <span>IRDAI Reg. · AMFI Reg. ARN: XXXXXX</span>
+  </div>
+</footer>
+
+<!--<a href="https://wa.me/919XXXXXXXXX" class="whatsapp-float" target="_blank">💬</a>-->
+
+</body>
+</html>
